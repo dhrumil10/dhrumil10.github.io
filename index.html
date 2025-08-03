@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dhrumil Patel - Portfolio</title>
+  <style>
+    /* Basic Reset & Fonts */
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fbfc;
+      color: #222;
+      line-height: 1.6;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1, h2, h3 {
+      color: #1e40af;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    .section-title {
+      border-bottom: 3px solid #2563eb;
+      padding-bottom: 0.25rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      padding-left: 1.25rem;
+    }
+    .experience-item, .project-item {
+      margin-bottom: 1.25rem;
+    }
+    .project-item a {
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+    /* Responsive grid for projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1rem;
+    }
+    .project-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+    }
+    .contact-links a {
+      margin: 0 1rem;
+    }
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Dhrumil Patel</h1>
+      <p>Software Developer | AI & Data Engineering | Boston, MA</p>
+      <p>
+        <a href="mailto:patel.dhrumil1@northeastern.edu">patel.dhrumil1@northeastern.edu</a> |
+        <a href="https://linkedin.com/in/dhrumil-patel-1b804a179" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/dhrumil10" target="_blank">GitHub</a> |
+        <a href="https://www.datascienceportfol.io/DhrumilPatel" target="_blank">Portfolio</a>
+      </p>
+    </header>
+
+    <section id="work-experience">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="experience-item">
+        <h3>Northeastern University — Software Developer (Part-time)</h3>
+        <p><em>Jun 2024 - Dec 2024, Boston, MA</em></p>
+        <ul>
+          <li>Launched AI pipeline for analyzing 1M+ cancer cell samples with Python, FastAPI, and OpenAI embeddings, reducing research time by 60%.</li>
+          <li>Automated Docker & GitHub Actions CI/CD pipelines, cutting deployment time by 92%.</li>
+          <li>Built interactive dashboards (Streamlit + Plotly) with oncology experts, improving reporting efficiency by 40%.</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Enertech Technology — Software Engineer</h3>
+        <p><em>Sep 2022 - Jul 2023, Vadodara, India</em></p>
+        <ul>
+          <li>Architected scalable backend services using Java Spring Boot, improving API performance by 25%.</li>
+          <li>Built distributed REST API microservices with JavaScript, Docker, AWS EC2, and GitHub Actions, boosting deployment speed by 70%.</li>
+          <li>Maintained CRM interfaces with 99.9% uptime, resolving 50+ frontend bugs.</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>D & D Software Solutions — Jr. Software Developer</h3>
+        <p><em>Sep 2021 - Aug 2022, Vadodara, India</em></p>
+        <ul>
+          <li>Contributed to Java/SQL microservices improving scalability and reliability.</li>
+          <li>Automated testing with React and JavaScript, increasing testing efficiency by 40%.</li>
+          <li>Participated in Agile ceremonies to improve team collaboration and sprint delivery.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid" id="projects-container">
+        <!-- Projects will be inserted here by JS -->
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <ul>
+        <li>Languages: Python, Java, C/C++, SQL (PL/SQL), APEX, Swift</li>
+        <li>Technologies & Tools: Spring Boot, AWS, Docker, Kubernetes, Airflow, FastAPI, OpenAI API, Pinecone, Snowflake, GitHub Actions, LangChain, PyTorch, Power BI, Streamlit, Plotly</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: <a href="mailto:patel.dhrumil1@northeastern.edu">patel.dhrumil1@northeastern.edu</a></p>
+      <p>
+        LinkedIn: <a href="https://linkedin.com/in/dhrumil-patel-1b804a179" target="_blank">linkedin.com/in/dhrumil-patel-1b804a179</a><br />
+        GitHub: <a href="https://github.com/dhrumil10" target="_blank">github.com/dhrumil10</a>
+      </p>
+    </section>
+
+    <footer>
+      &copy; 2025 Dhrumil Patel — Built with ❤️ and GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    // Project data fetched from GitHub API for your profile (top repos)
+    async function fetchProjects() {
+      const response = await fetch('https://api.github.com/users/dhrumil10/repos?sort=updated&per_page=8');
+      const repos = await response.json();
+      const container = document.getElementById('projects-container');
+
+      repos.forEach(repo => {
+        const projectDiv = document.createElement('div');
+        projectDiv.className = 'project-card';
+
+        const name = document.createElement('a');
+        name.href = repo.html_url;
+        name.target = '_blank';
+        name.textContent = repo.name;
+
+        const desc = document.createElement('p');
+        desc.textContent = repo.description || 'No description provided.';
+
+        projectDiv.appendChild(name);
+        projectDiv.appendChild(desc);
+        container.appendChild(projectDiv);
+      });
+    }
+
+    fetchProjects();
+  </script>
+</body>
+</html>
