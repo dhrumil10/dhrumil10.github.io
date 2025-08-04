@@ -1,326 +1,1633 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dhrumil Patel | Software Engineer Portfolio</title>
-  <style>
-    /* Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhrumil Patel - Software Developer & AI Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Reset & Base */
-    * {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f0f4f8;
-      color: #1a202c;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #1e40af;
-    }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-    /* Header */
-    header {
-      background: #2563eb;
-      color: white;
-      padding: 1.5rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
-    }
-    header nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    header nav .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-    }
-    header nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-    header nav ul li {
-      font-weight: 600;
-    }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
+        /* Icon fixes */
+        .fas, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+        }
 
-    /* About Section */
-    #about {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    #about h1 {
-      font-size: 3rem;
-      margin-bottom: 0.25rem;
-      color: #1e40af;
-    }
-    #about p {
-      font-size: 1.2rem;
-      color: #4b5563;
-    }
+        .fab {
+            font-weight: 400;
+        }
 
-    /* Section Titles */
-    h2 {
-      color: #1e40af;
-      margin-bottom: 1rem;
-      border-bottom: 3px solid #2563eb;
-      padding-bottom: 0.25rem;
-    }
+        /* Ensure icons have proper spacing */
+        i {
+            margin-right: 0.5rem;
+        }
 
-    /* Skills Section */
-    #skills ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 2rem;
-      justify-content: center;
-    }
-    #skills ul li {
-      background: #2563eb;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      font-weight: 600;
-      box-shadow: 0 4px 6px rgb(37 99 235 / 0.4);
-      transition: background 0.3s ease;
-      cursor: default;
-    }
-    #skills ul li:hover {
-      background: #1e40af;
-    }
+        .project-link i, .btn i {
+            margin-right: 0.5rem;
+        }
 
-    /* Experience Section */
-    .experience-item {
-      margin-bottom: 2rem;
-    }
-    .experience-item h3 {
-      color: #1e40af;
-      margin-bottom: 0.25rem;
-    }
-    .experience-item em {
-      color: #6b7280;
-      font-style: normal;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      display: block;
-    }
-    .experience-item ul {
-      list-style: disc inside;
-      color: #374151;
-    }
+        .contact-item i {
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
 
-    /* Projects Grid */
-    #projects {
-      margin-bottom: 3rem;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: white;
-      padding: 1rem 1.25rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgb(0 0 0 / 0.15);
-    }
-    .project-card a {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #2563eb;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
-    .project-card p {
-      color: #374151;
-      font-size: 0.95rem;
-      min-height: 48px;
-    }
+        .skill-category i {
+            margin-right: 0.5rem;
+        }
 
-    /* Contact Section */
-    #contact p {
-      text-align: center;
-      font-size: 1.1rem;
-      margin-bottom: 0.25rem;
-      color: #374151;
-    }
-    #contact a {
-      color: #2563eb;
-      font-weight: 600;
-    }
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      margin: 3rem 0 2rem;
-      color: #9ca3af;
-      font-size: 0.9rem;
-    }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      #about h1 {
-        font-size: 2.2rem;
-      }
-      header nav ul {
-        gap: 1rem;
-      }
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-      #skills ul {
-        justify-content: center;
-      }
-    }
-  </style>
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.7s forwards;
+        }
+
+        .hero .location {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.9s forwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.1s forwards;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* GitHub Stats */
+        .github-stats {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .github-stats h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .github-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .github-cards img, .github-streak img {
+            width: 100%;
+            max-width: 495px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .github-cards img:hover, .github-streak img:hover {
+            transform: scale(1.02);
+        }
+
+        .github-streak {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: #f8fafc;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-left: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .company {
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .job-period {
+            font-size: 0.9rem;
+            color: #666;
+            background: #e2e8f0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .job-achievements {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .job-achievements li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .job-achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-header::before {
+            top: -40%;
+            right: -40%;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-subtitle {
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #764ba2;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: #f8fafc;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category i {
+            color: #667eea;
+            font-size: 1.5rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .achievement-card:hover .achievement-icon {
+            transform: scale(1.1);
+        }
+
+        .achievement-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .achievement-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-org {
+            font-size: 1rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-description {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+            -webkit-text-fill-color: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .certification-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .cert-header {
+            padding: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-header.azure {
+            background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+        }
+
+        .cert-header.aws {
+            background: linear-gradient(135deg, #ff9900 0%, #ec7211 100%);
+        }
+
+        .cert-header.coursera {
+            background: linear-gradient(135deg, #0056d3 0%, #004494 100%);
+        }
+
+        .cert-header.udemy {
+            background: linear-gradient(135deg, #ec5252 0%, #b91c1c 100%);
+        }
+
+        .cert-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+
+        .certification-card:hover .cert-header::before {
+            top: -40%;
+            right: -40%;
+        }
+
+        .cert-logo {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cert-provider {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cert-content {
+            padding: 2rem;
+        }
+
+        .cert-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-code {
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cert-description {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .cert-skill {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Education Section */
+        .education {
+            background: white;
+        }
+
+        .education-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .education-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .gpa {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .graduation {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .job-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .section {
+                padding: 60px 0;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .timeline {
+                padding-left: 1rem;
+            }
+
+            .timeline-item {
+                margin-left: 1rem;
+            }
+
+            .github-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .github-cards img, .github-streak img {
+                max-width: 100%;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav class="container">
-      <div class="logo">Dhrumil Patel</div>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Dhrumil Patel</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <main class="container">
-    <section id="about">
-      <h1>Dhrumil Patel</h1>
-      <p>Software Engineer | AI & Data Engineering | Boston, MA</p>
-      <p>
-        Experienced developer passionate about building scalable, maintainable software solutions leveraging Java, Spring Boot, and cloud-native tools. Skilled in applying algorithms and core CS concepts to real-world challenges.
-      </p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Dhrumil Patel</h1>
+            <p class="subtitle">Software Developer & AI Engineer</p>
+            <p class="location">📍 Boston, MA</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    💻 View Projects
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    ✉️ Get In Touch
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating particles -->
+        <div class="particle" style="top: 20%; left: 10%; width: 10px; height: 10px; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 60%; left: 80%; width: 8px; height: 8px; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 40%; left: 20%; width: 6px; height: 6px; animation-delay: 1s;"></div>
+        <div class="particle" style="top: 80%; left: 70%; width: 12px; height: 12px; animation-delay: 3s;"></div>
     </section>
 
-    <section id="skills">
-      <h2>Skills & Technologies</h2>
-      <ul>
-        <li>Java</li>
-        <li>Spring Boot</li>
-        <li>Python</li>
-        <li>FastAPI</li>
-        <li>Docker</li>
-        <li>Kubernetes</li>
-        <li>AWS</li>
-        <li>CI/CD (GitHub Actions)</li>
-        <li>React / Angular</li>
-        <li>Algorithms & Data Structures</li>
-        <li>Microservices</li>
-        <li>OpenAI API & Embeddings</li>
-      </ul>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title fade-in">About Me</h2>
+        <div class="about-content fade-in">
+            <div class="about-text">
+                <p>I'm a passionate Software Developer and AI Engineer currently pursuing my Master's in Data Architecture and Management at Northeastern University. With experience spanning across full-stack development, machine learning, and data engineering, I specialize in building scalable solutions that drive meaningful impact.</p>
+                
+                <p>My journey includes developing AI-powered systems, optimizing data pipelines processing millions of records, and creating innovative applications that solve real-world problems. I'm particularly excited about the intersection of AI and software engineering, where I can leverage cutting-edge technologies to build intelligent systems.</p>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">10M+</div>
+                        <div class="stat-label">Records Processed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">35%</div>
+                        <div class="stat-label">Data Accuracy Improvement</div>
+                    </div>
+                </div>
+
+                <!-- GitHub Stats -->
+                <div class="github-stats">
+                    <h3>📊 GitHub Activity</h3>
+                    <div class="github-cards">
+                        <img src="https://github-readme-stats.vercel.app/api?username=dhrumilpatel&show_icons=true&theme=gradient&hide_border=true&bg_color=f8fafc&title_color=667eea&icon_color=764ba2&text_color=333&count_private=true" alt="GitHub Stats" />
+                        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dhrumilpatel&layout=compact&theme=gradient&hide_border=true&bg_color=f8fafc&title_color=667eea&text_color=333" alt="Top Languages" />
+                    </div>
+                    <div class="github-streak">
+                        <img src="https://streak-stats.demolab.com/?user=dhrumilpatel&theme=default&hide_border=true&background=f8fafc&stroke=667eea&ring=764ba2&fire=667eea&currStreakLabel=333" alt="GitHub Streak" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="experience">
-      <h2>Work Experience</h2>
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <h2 class="section-title fade-in">Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Software Developer Intern</div>
+                        <div class="company">Northeastern University</div>
+                    </div>
+                    <div class="job-period">Jun 2024 - Dec 2024</div>
+                </div>
+                <ul class="job-achievements">
+                    <li>Launched scalable data pipelines with Airflow and Backend APIs using Python, FastAPI, and Snowflake to process 1M+ cancer cell samples</li>
+                    <li>Integrated ML models using PyTorch and TensorFlow for classification and similarity matching, improving research data filtering accuracy by 35%</li>
+                    <li>Developed interactive dashboards with Streamlit and Plotly, improving report generation efficiency by 40%</li>
+                    <li>Integrated embeddings with Pinecone and Agentic AI systems for enhanced data retrieval</li>
+                </ul>
+            </div>
 
-      <article class="experience-item">
-        <h3>Northeastern University — Software Developer (Part-time)</h3>
-        <em>Jun 2024 - Dec 2024, Boston, MA</em>
-        <ul>
-          <li>Built AI pipeline analyzing 1M+ cancer cell samples with Python, FastAPI, and OpenAI embeddings; cut manual research time by 60%.</li>
-          <li>Automated CI/CD pipelines with Docker & GitHub Actions, reducing deployment time by 92%.</li>
-          <li>Developed interactive Streamlit dashboards with oncology experts, increasing reporting efficiency by 40%.</li>
-        </ul>
-      </article>
+            <div class="timeline-item fade-in">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="company">Enertech Technology</div>
+                    </div>
+                    <div class="job-period">Sep 2022 - Jun 2023</div>
+                </div>
+                <ul class="job-achievements">
+                    <li>Architected React.js frontend and Python backend services, reducing user-reported issues by 20%</li>
+                    <li>Initiated AI-powered image recognition feature for automated product verification, reducing manual review time by 30%</li>
+                    <li>Built distributed CI/CD pipelines using Maven and GitHub Actions, speeding up deployment cycles by 40%</li>
+                    <li>Optimized backend database queries and caching strategies, improving API response times by 25%</li>
+                    <li>Maintained 99.9% application uptime through proactive debugging and issue resolution</li>
+                </ul>
+            </div>
 
-      <article class="experience-item">
-        <h3>Enertech Technology — Software Engineer</h3>
-        <em>Sep 2022 - Jul 2023, Vadodara, India</em>
-        <ul>
-          <li>Architected scalable backend microservices using Java Spring Boot, improving API performance by 25%.</li>
-          <li>Built distributed REST APIs and deployed containerized microservices on AWS EC2 with GitHub Actions.</li>
-          <li>Maintained CRM frontend with 99.9% uptime, resolving 50+ bugs and improving stability.</li>
-        </ul>
-      </article>
-
-      <article class="experience-item">
-        <h3>D & D Software Solutions — Jr. Software Developer</h3>
-        <em>Sep 2021 - Aug 2022, Vadodara, India</em>
-        <ul>
-          <li>Developed Java/SQL microservices improving system scalability and reliability.</li>
-          <li>Automated frontend testing with React and JavaScript, boosting efficiency by 40%.</li>
-          <li>Engaged in Agile ceremonies to improve sprint delivery and collaboration.</li>
-        </ul>
-      </article>
+            <div class="timeline-item fade-in">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Jr. Software Developer</div>
+                        <div class="company">D & D Software Solutions</div>
+                    </div>
+                    <div class="job-period">Sep 2021 - Aug 2022</div>
+                </div>
+                <ul class="job-achievements">
+                    <li>Developed backend APIs and frontend components using Java Spring Boot, MySQL, and MongoDB</li>
+                    <li>Automated testing frameworks using React and JavaScript, reducing manual testing effort by 40%</li>
+                    <li>Participated in Agile ceremonies and sprint planning, reducing development cycle time by 15%</li>
+                    <li>Conducted bug fixes and resolved support tickets, maintaining application stability</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects-grid" id="projects-container">
-        <!-- Projects loaded via JS -->
-      </div>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title fade-in">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3 class="project-title">NVIDIA Research Assistant</h3>
+                    <p class="project-subtitle">Multi-Agent Financial Research Platform</p>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Comprehensive research assistant analyzing NVIDIA's quarterly reports and historical data using RAG (Retrieval-Augmented Generation), multi-agent architecture, and real-time web search capabilities with interactive visualizations.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AWS S3</span>
+                        <span class="tech-tag">Snowflake</span>
+                        <span class="tech-tag">Pinecone RAG</span>
+                        <span class="tech-tag">OpenAI</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">GCP</span>
+                    </div>
+                    <a href="https://github.com/DAMG7250-Team1/nvidia-research-assistant" class="project-link" target="_blank">
+                        🔗 View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3 class="project-title">AutoRoute AI</h3>
+                    <p class="project-subtitle">Smart Multi-Agent Route Generator</p>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        An AI-powered route optimization system that integrates efficiency and detour data, featuring energy-efficient routing with incident alerts and AI assistant capabilities, reducing travel time by up to 20%.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LangGraph</span>
+                        <span class="tech-tag">LLM</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">OpenAI API</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        🔗 View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3 class="project-title">Cancer Research Report Generator</h3>
+                    <p class="project-subtitle">Agentic System for Medical Research (Hackathon)</p>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Multi-agent AI system leveraging LLM and MCP server to generate comprehensive cancer research reports by integrating real-time SEER and PubMed data, reducing report generation time by 40%.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LLM</span>
+                        <span class="tech-tag">MCP Server</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Snowflake</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        🔗 View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3 class="project-title">Skill Match AI</h3>
+                    <p class="project-subtitle">Smart Job Matching & CV Generator</p>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        AI-powered job matching platform with Pinecone vector DB and OpenAI embeddings, featuring automated CV feedback and cover letter generation, improving recommendation accuracy by 25%.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Pinecone</span>
+                        <span class="tech-tag">OpenAI</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Airflow</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">GCP</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        🔗 View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3 class="project-title">FRED Stock Market Analytics</h3>
+                    <p class="project-subtitle">End-to-End Data Processing & LLM Analysis</p>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Engineered a comprehensive pipeline ingesting FRED data to AWS S3, Snowpark and EC2 with Tonic for secure synthesis, increasing AI readiness by 40% and reducing LLM hallucinations by 30%.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AWS S3</span>
+                        <span class="tech-tag">Snowpark</span>
+                        <span class="tech-tag">EC2</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">LLM</span>
+                        <span class="tech-tag">CI/CD</span>
+                    </div>
+                    <a href="https://github.com/DAMG7250-Team1/Assignment3_part2" class="project-link" target="_blank">
+                        🔗 View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3 class="project-title">Crash Data BI Solution</h3>
+                    <p class="project-subtitle">Multi-City Traffic Analytics Platform</p>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Utilized Azure Data Factory to scale big data systems for real-time analysis of 10M+ crash records across NYC, Chicago, and Dallas with dimensional modeling and comprehensive BI dashboards.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Azure ADF</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Snowflake</span>
+                        <span class="tech-tag">ETL</span>
+                        <span class="tech-tag">ER Studio</span>
+                    </div>
+                    <a href="https://github.com/vijeth-sr/damg7370_final_project" class="project-link" target="_blank">
+                        🔗 View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3 class="project-title">SEC Financial Data Analytics</h3>
+                    <p class="project-subtitle">Advanced Data Engineering System</p>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Built end-to-end data pipeline utilizing Airflow, GCP, and Snowflake to analyze SEC financial data with web scraping capabilities, leading to 35% increase in data integrity and accuracy.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Airflow</span>
+                        <span class="tech-tag">GCP</span>
+                        <span class="tech-tag">Snowflake</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Web Scraping</span>
+                    </div>
+                    <a href="https://github.com/DAMG7250-Team1/assignment2-secdata" class="project-link" target="_blank">
+                        🔗 View Project
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:patel.dhrumil1@northeastern.edu">patel.dhrumil1@northeastern.edu</a></p>
-      <p>
-        LinkedIn: <a href="https://linkedin.com/in/dhrumil-patel-1b804a179" target="_blank">linkedin.com/in/dhrumil-patel-1b804a179</a><br />
-        GitHub: <a href="https://github.com/dhrumil10" target="_blank">github.com/dhrumil10</a>
-      </p>
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <h2 class="section-title fade-in">Skills & Technologies</h2>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3>💻 Programming Languages</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">NoSQL</span>
+                    <span class="skill-tag">Swift</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>🤖 AI/ML & Data</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">OpenAI API</span>
+                    <span class="skill-tag">Pinecone</span>
+                    <span class="skill-tag">Snowflake</span>
+                    <span class="skill-tag">Airflow</span>
+                    <span class="skill-tag">MLOps</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>🗄️ Backend & Databases</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">BigQuery</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>🎨 Frontend & UI</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Streamlit</span>
+                    <span class="skill-tag">Plotly</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>☁️ Cloud & DevOps</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">GCP</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">GitHub Actions</span>
+                    <span class="skill-tag">CI/CD</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>🛠️ Tools & Platforms</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">Maven</span>
+                    <span class="skill-tag">Salesforce</span>
+                    <span class="skill-tag">ETL/ELT</span>
+                    <span class="skill-tag">scikit-learn</span>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer>
-    &copy; 2025 Dhrumil Patel &mdash; Built with HTML, CSS & GitHub Pages
-  </footer>
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <h2 class="section-title fade-in">Certifications & Learning</h2>
+        <div class="certifications-grid">
+            <div class="certification-card fade-in">
+                <div class="cert-header azure">
+                    <div class="cert-logo">☁️</div>
+                    <div class="cert-provider">Microsoft Azure</div>
+                </div>
+                <div class="cert-content">
+                    <h3>Azure Data Engineer Associate</h3>
+                    <p class="cert-code">DP-203</p>
+                    <p class="cert-description">
+                        Design and implement data storage, data processing, and data security across various Azure data services.
+                    </p>
+                    <div class="cert-skills">
+                        <span class="cert-skill">Azure Data Factory</span>
+                        <span class="cert-skill">Synapse Analytics</span>
+                        <span class="cert-skill">Data Lake</span>
+                    </div>
+                </div>
+            </div>
 
-  <script>
-    async function loadProjects() {
-      const response = await fetch('https://api.github.com/users/dhrumil10/repos?sort=updated&per_page=8');
-      const repos = await response.json();
-      const container = document.getElementById('projects-container');
-      repos.forEach(repo => {
-        const card = document.createElement('div');
-        card.className = 'project-card';
+            <div class="certification-card fade-in">
+                <div class="cert-header azure">
+                    <div class="cert-logo">🤖</div>
+                    <div class="cert-provider">Microsoft Azure</div>
+                </div>
+                <div class="cert-content">
+                    <h3>Azure AI Engineer Associate</h3>
+                    <p class="cert-code">AI-102</p>
+                    <p class="cert-description">
+                        Build, manage, and deploy AI solutions that leverage Azure Cognitive Services and Azure Applied AI services.
+                    </p>
+                    <div class="cert-skills">
+                        <span class="cert-skill">Cognitive Services</span>
+                        <span class="cert-skill">Machine Learning</span>
+                        <span class="cert-skill">AI Solutions</span>
+                    </div>
+                </div>
+            </div>
 
-        const link = document.createElement('a');
-        link.href = repo.html_url;
-        link.target = '_blank';
-        link.textContent = repo.name;
+            <div class="certification-card fade-in">
+                <div class="cert-header aws">
+                    <div class="cert-logo">🏗️</div>
+                    <div class="cert-provider">Amazon Web Services</div>
+                </div>
+                <div class="cert-content">
+                    <h3>AWS Cloud Practitioner</h3>
+                    <p class="cert-code">CLF-C01</p>
+                    <p class="cert-description">
+                        Foundational understanding of AWS Cloud concepts, services, security, architecture, pricing, and support.
+                    </p>
+                    <div class="cert-skills">
+                        <span class="cert-skill">Cloud Concepts</span>
+                        <span class="cert-skill">AWS Services</span>
+                        <span class="cert-skill">Security</span>
+                    </div>
+                </div>
+            </div>
 
-        const desc = document.createElement('p');
-        desc.textContent = repo.description || 'No description provided.';
+            <div class="certification-card fade-in">
+                <div class="cert-header aws">
+                    <div class="cert-logo">⚡</div>
+                    <div class="cert-provider">Amazon Web Services</div>
+                </div>
+                <div class="cert-content">
+                    <h3>AWS Developer Associate</h3>
+                    <p class="cert-code">DVA-C01</p>
+                    <p class="cert-description">
+                        Develop, deploy, and debug cloud-based applications using AWS services and development tools.
+                    </p>
+                    <div class="cert-skills">
+                        <span class="cert-skill">Lambda</span>
+                        <span class="cert-skill">API Gateway</span>
+                        <span class="cert-skill">DevOps</span>
+                    </div>
+                </div>
+            </div>
 
-        card.appendChild(link);
-        card.appendChild(desc);
-        container.appendChild(card);
-      });
-    }
-    loadProjects();
-  </script>
+            <div class="certification-card fade-in">
+                <div class="cert-header coursera">
+                    <div class="cert-logo">🧠</div>
+                    <div class="cert-provider">Coursera</div>
+                </div>
+                <div class="cert-content">
+                    <h3>Machine Learning Specialization</h3>
+                    <p class="cert-code">Andrew Ng</p>
+                    <p class="cert-description">
+                        Comprehensive machine learning course covering supervised learning, unsupervised learning, and deep learning.
+                    </p>
+                    <div class="cert-skills">
+                        <span class="cert-skill">Neural Networks</span>
+                        <span class="cert-skill">Deep Learning</span>
+                        <span class="cert-skill">Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card fade-in">
+                <div class="cert-header udemy">
+                    <div class="cert-logo">📊</div>
+                    <div class="cert-provider">Udemy</div>
+                </div>
+                <div class="cert-content">
+                    <h3>Complete Data Science Bootcamp</h3>
+                    <p class="cert-code">Python & R</p>
+                    <p class="cert-description">
+                        End-to-end data science training covering statistics, machine learning, and data visualization techniques.
+                    </p>
+                    <div class="cert-skills">
+                        <span class="cert-skill">Python</span>
+                        <span class="cert-skill">R</span>
+                        <span class="cert-skill">Statistics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <h2 class="section-title fade-in">Education</h2>
+        <div class="education-cards">
+            <div class="education-card fade-in">
+                <h3>Northeastern University</h3>
+                <div class="degree">Master of Science in Data Architecture and Management</div>
+                <div class="gpa">GPA: 3.4/4.0</div>
+                <div class="graduation">Expected Graduation: May 2025</div>
+                <p style="margin-top: 1rem; color: #666;">Focused on Software Engineering and AI</p>
+            </div>
+            <div class="education-card fade-in">
+                <h3>Bachelor of Engineering</h3>
+                <div class="degree">Information Technology</div>
+                <div class="gpa">GPA: 3.5/4.0</div>
+                <div class="graduation">Completed</div>
+                <p style="margin-top: 1rem; color: #666;">Focused on Computer Science and Statistics</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <h2 class="section-title fade-in">Achievements & Leadership</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    🏆
+                </div>
+                <div class="achievement-content">
+                    <h3>Hackathon Runner-Up</h3>
+                    <p class="achievement-org">BITS Institute</p>
+                    <p class="achievement-description">
+                        Secured runner-up position in competitive hackathon at prestigious BITS Institute, demonstrating innovative problem-solving and technical excellence among top-tier participants.
+                    </p>
+                </div>
+            </div>
+
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    👥
+                </div>
+                <div class="achievement-content">
+                    <h3>Lead - Coding Club</h3>
+                    <p class="achievement-org">Bachelor's Institution</p>
+                    <p class="achievement-description">
+                        Led coding club initiatives, organizing tech workshops with industry experts, quiz competitions, seminars, and hackathons. Fostered learning environment and mentored students in programming and software development.
+                    </p>
+                </div>
+            </div>
+
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    🎯
+                </div>
+                <div class="achievement-content">
+                    <h3>Lead - OTS Team</h3>
+                    <p class="achievement-org">National Tech Fest</p>
+                    <p class="achievement-description">
+                        Spearheaded On-The-Spot (OTS) team for national tech fest, designing innovative user navigation and crowd management systems. Successfully managed large-scale event logistics and enhanced attendee experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <h2 class="section-title fade-in">Let's Connect</h2>
+        <div class="contact-info">
+            <div class="contact-item fade-in">
+                ✉️
+                <h3>Email</h3>
+                <a href="mailto:patel.dhrumil1@northeastern.edu">patel.dhrumil1@northeastern.edu</a>
+            </div>
+            <div class="contact-item fade-in">
+                📞
+                <h3>Phone</h3>
+                <a href="tel:+12159701289">(215) 970-1289</a>
+            </div>
+            <div class="contact-item fade-in">
+                💼
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/dhrumil" target="_blank">linkedin.com/in/dhrumil</a>
+            </div>
+            <div class="contact-item fade-in">
+                🌐
+                <h3>Portfolio</h3>
+                <a href="#" target="_blank">View Portfolio Site</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Dynamic typing effect for hero subtitle
+        const subtitle = document.querySelector('.hero .subtitle');
+        const roles = ['Software Developer & AI Engineer', 'Data Pipeline Architect', 'ML Engineer', 'Full-Stack Developer'];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeRole() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                subtitle.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                subtitle.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+            }
+
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(typeRole, typingSpeed);
+        }
+
+        // Start typing effect after initial animation
+        setTimeout(() => {
+            typeRole();
+        }, 2000);
+    </script>
 </body>
 </html>
