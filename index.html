@@ -28,7 +28,6 @@
 
         #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
 
-        /* Navigation */
         nav {
             position: fixed; width: 100%; padding: 15px;
             display: flex; justify-content: center; gap: 20px;
@@ -41,24 +40,19 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
         .section-header { font-size: 0.8rem; color: var(--accent); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 50px; text-align: center; }
 
-        /* Hero */
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; letter-spacing: -2px; margin-bottom: 10px; }
         
-        /* Story Cards */
-        .card { background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 15px; margin-bottom: 30px; transition: 0.3s; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 15px; margin-bottom: 30px; transition: 0.3s; height: 100%; }
         .card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .card h3 { color: var(--accent); margin-bottom: 15px; }
 
-        /* Tech Tags */
         .tag { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border: 1px solid var(--border); border-radius: 4px; margin: 3px; color: var(--accent); }
         
-        /* Professional Timeline */
         .timeline-item { border-left: 2px solid var(--accent); padding-left: 25px; margin-bottom: 50px; position: relative; }
         .timeline-item::before { content: ''; position: absolute; left: -9px; top: 5px; width: 16px; height: 16px; background: var(--bg); border: 2px solid var(--accent); border-radius: 50%; }
         .job-meta { font-size: 0.9rem; color: var(--accent); margin-bottom: 10px; font-weight: bold; }
 
-        /* Stats */
         .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
         .stat-box { text-align: center; padding: 20px; border: 1px solid var(--border); border-radius: 10px; }
         .stat-num { font-size: 2rem; color: var(--accent); font-weight: 800; display: block; }
@@ -69,6 +63,8 @@
         ul { list-style: none; }
         li { position: relative; padding-left: 20px; margin-bottom: 10px; }
         li::before { content: '>'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
     </style>
 </head>
 <body>
@@ -77,45 +73,44 @@
 
     <nav>
         <a href="#about">Bio</a>
-        <a href="#experience">Exp</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#experience">History</a>
+        <a href="#projects">Files</a>
+        <a href="#skills">Matrix</a>
+        <a href="#achievements">Certs</a>
     </nav>
 
     <section class="hero">
-        <div data-aos="fade-down" style="font-family: monospace; opacity: 0.7; color: var(--accent);">[ BOSTON_LEVEL_ENGINEER ]</div>
+        <div data-aos="fade-down" style="font-family: monospace; opacity: 0.7; color: var(--accent);">[ STATUS: ARCHITECTING_CHAOS ]</div>
         <h1 data-aos="zoom-in">DHRUMIL PATEL</h1>
-        <p data-aos="fade-up">Software Developer & AI Engineer | Northeastern University MS</p>
+        <p data-aos="fade-up">Software & AI Engineer | Boston, MA</p>
         <div data-aos="fade-up" data-aos-delay="200">
-            <a href="#projects" class="btn">Initialize Narrative</a>
+            <a href="#projects" class="btn">View Narrative</a>
         </div>
     </section>
 
     <section id="about" class="container">
         <h2 class="section-header">01 // The Core Profile</h2>
         <div class="card" data-aos="fade-up">
-            <p>I'm a passionate Software Developer and AI Engineer pursuing my Master's in Data Architecture and Management at Northeastern University. I specialize in building scalable solutions, optimizing data pipelines, and building intelligent systems that solve real-world problems.</p>
+            <p>I'm a Software Developer and AI Engineer pursuing my Master's at Northeastern University. I specialize in the intersection of full-stack engineering and agentic AI, building systems that optimize data pipelines for 10M+ records and improving accuracy via advanced ML orchestration.</p>
             <div class="stat-grid">
                 <div class="stat-box"><span class="stat-num">10M+</span>Records Processed</div>
                 <div class="stat-box"><span class="stat-num">35%</span>Accuracy Improvement</div>
-                <div class="stat-box"><span class="stat-num">40%</span>Deployment Speedup</div>
-                <div class="stat-box"><span class="stat-num">3.4</span>GPA @ Northeastern</div>
+                <div class="stat-box"><span class="stat-num">3.4/4.0</span>MS GPA @ NEU</div>
             </div>
         </div>
     </section>
 
     <section id="experience" class="container">
-        <h2 class="section-header">02 // Operational History</h2>
+        <h2 class="section-header">02 // Experience Log</h2>
         
         <div class="timeline-item" data-aos="fade-left">
             <div class="job-meta">Aug 2025 - Present | IPSER LAB</div>
             <h3>Software Engineer Intern</h3>
             <ul>
-                <li>Launched scalable data pipelines with Airflow and Backend APIs using React, JAVA, and Snowflake to process 1M+ data samples.</li>
-                <li>Integrated ML models using PyTorch and TensorFlow for classification, improving research data filtering accuracy by 35%.</li>
-                <li>Developed interactive dashboards with Streamlit and Plotly, improving report generation efficiency by 40%.</li>
-                <li>Integrated embeddings with Pinecone and Agentic AI systems for enhanced data retrieval.</li>
+                <li>Launched scalable data pipelines with Airflow and Snowflake to process 1M+ samples.</li>
+                <li>Integrated ML models (PyTorch/TensorFlow) for classification, boosting accuracy by 35%.</li>
+                <li>Built interactive dashboards with Streamlit, improving efficiency by 40%.</li>
+                <li>Engineered Agentic AI systems with Pinecone embeddings for enhanced retrieval.</li>
             </ul>
         </div>
 
@@ -123,11 +118,10 @@
             <div class="job-meta">Jul 2020 - Jul 2023 | Enertech Technology</div>
             <h3>Software Engineer</h3>
             <ul>
-                <li>Architected React.js frontend and Python backend services, reducing user-reported issues by 20%.</li>
-                <li>Initiated AI-powered image recognition feature for automated product verification, reducing manual review time by 30%.</li>
-                <li>Built distributed CI/CD pipelines using Maven and GitHub Actions, speeding up deployment cycles by 40%.</li>
-                <li>Optimized backend database queries and caching strategies, improving API response times by 25%.</li>
-                <li>Maintained 99.9% application uptime through proactive debugging.</li>
+                <li>Architected React.js/Python services, reducing issues by 20%.</li>
+                <li>Led AI image recognition for automated verification, saving 30% manual review time.</li>
+                <li>Built distributed CI/CD with GitHub Actions, accelerating deployment cycles by 40%.</li>
+                <li>Maintained 99.9% uptime through proactive debugging.</li>
             </ul>
         </div>
 
@@ -135,92 +129,98 @@
             <div class="job-meta">Jan 2020 - May 2020 | D & D Software Solutions</div>
             <h3>Jr. Software Developer</h3>
             <ul>
-                <li>Developed backend APIs and frontend components using Java Spring Boot, MySQL, and MongoDB.</li>
-                <li>Automated testing frameworks using React and JavaScript, reducing manual testing effort by 40%.</li>
-                <li>Participated in Agile ceremonies, reducing development cycle time by 15%.</li>
+                <li>Developed Java Spring Boot APIs and MySQL/MongoDB backend components.</li>
+                <li>Automated testing with React/JS, reducing manual effort by 40%.</li>
             </ul>
         </div>
     </section>
 
     <section id="projects" class="container">
-        <h2 class="section-header">03 // Active Projects</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px;">
-            
+        <h2 class="section-header">03 // The Filesystem</h2>
+        <div class="grid-3">
             <div class="card" data-aos="fade-up" style="border-left: 4px solid var(--chaos-red);">
                 <h3 style="color: var(--chaos-red);">ChaosGuard AI</h3>
-                <p>Self-healing CI/CD multi-agent system. Triad Agent Pattern (Detective, Patcher, Auditor) for safe autopilot regressions.</p>
-                <div style="margin-top:10px;"><span class="tag">LangGraph</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span></div>
+                <p>Self-healing CI/CD multi-agent system. Uses a Triad Pattern to rollback regressions and auto-generate PR fixes.</p>
+                <div style="margin-top:10px;"><span class="tag">LangGraph</span><span class="tag">Docker</span><span class="tag">Prometheus</span></div>
             </div>
-
             <div class="card" data-aos="fade-up">
                 <h3>NVIDIA Research Assistant</h3>
-                <p>Comprehensive research platform analyzing quarterly reports using RAG, multi-agent architecture, and real-time web search.</p>
-                <div style="margin-top:10px;"><span class="tag">AWS S3</span><span class="tag">Snowflake</span><span class="tag">Pinecone RAG</span><span class="tag">FastAPI</span></div>
+                <p>RAG-based platform for multi-agent financial research and real-time visualization.</p>
+                <div style="margin-top:10px;"><span class="tag">Snowflake</span><span class="tag">Pinecone</span><span class="tag">FastAPI</span></div>
             </div>
-
             <div class="card" data-aos="fade-up" style="border-left: 4px solid #a066ff;">
-                <h3 style="color: #a066ff;">BioReport AI</h3>
-                <p>Automated biomedical research report generator. Integrates real-time SEER and PubMed data via Agentic LLM systems.</p>
-                <div style="margin-top:10px;"><span class="tag">Agentic AI</span><span class="tag">Python</span><span class="tag">PubMed API</span></div>
-            </div>
-
-            <div class="card" data-aos="fade-up">
-                <h3>AutoRoute AI</h3>
-                <p>AI-powered route optimization featuring energy-efficient routing and incident alerts, reducing travel time by 20%.</p>
-                <div style="margin-top:10px;"><span class="tag">LangGraph</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span></div>
-            </div>
-
-            <div class="card" data-aos="fade-up">
-                <h3>Skill Match AI</h3>
-                <p>AI job matching platform with automated CV feedback and cover letter generation using vector embeddings.</p>
-                <div style="margin-top:10px;"><span class="tag">Pinecone</span><span class="tag">OpenAI</span><span class="tag">Airflow</span></div>
-            </div>
-            
-            <div class="card" data-aos="fade-up">
-                <h3>FRED Stock Market Analytics</h3>
-                <p>Pipeline ingesting FRED data to AWS S3/Snowpark with Tonic synthesis, reducing LLM hallucinations by 30%.</p>
-                <div style="margin-top:10px;"><span class="tag">AWS S3</span><span class="tag">Snowpark</span><span class="tag">EC2</span></div>
+                <h3>BioReport AI</h3>
+                <p>Agentic system generating biomedical reports by integrating SEER and PubMed data.</p>
+                <div style="margin-top:10px;"><span class="tag">Agentic AI</span><span class="tag">Python</span><span class="tag">MCP Server</span></div>
             </div>
         </div>
     </section>
 
     <section id="skills" class="container">
-        <h2 class="section-header">04 // Capability Matrix</h2>
-        <div class="card">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
-                <div>
-                    <h4>Languages</h4>
-                    <span class="tag">Python</span><span class="tag">Java</span><span class="tag">C/C++</span><span class="tag">SQL</span><span class="tag">JavaScript</span>
-                </div>
-                <div>
-                    <h4>AI/ML & Data</h4>
-                    <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">LangChain</span><span class="tag">Pinecone</span><span class="tag">Snowflake</span><span class="tag">Airflow</span>
-                </div>
-                <div>
-                    <h4>Cloud/DevOps</h4>
-                    <span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">GCP</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">CI/CD</span>
-                </div>
-            </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+        <h2 class="section-header">04 // Skill Matrix</h2>
+        <div class="grid-3">
             <div class="card">
-                <h3>Education</h3>
-                <p><strong>Northeastern University</strong><br>MS in Data Architecture & Management<br>GPA: 3.4 | Expected May 2025</p>
+                <h4>Languages</h4>
+                <div class="tag">Python</div><div class="tag">Java</div><div class="tag">C/C++</div><div class="tag">SQL</div><div class="tag">Swift</div><div class="tag">JavaScript</div>
             </div>
             <div class="card">
-                <h3>Certs</h3>
-                <span class="tag">Azure Data Engineer (DP-203)</span>
-                <span class="tag">Azure AI Engineer (AI-102)</span>
-                <span class="tag">AWS Developer Associate</span>
+                <h4>AI & Data</h4>
+                <div class="tag">PyTorch</div><div class="tag">LangChain</div><div class="tag">OpenAI API</div><div class="tag">Airflow</div><div class="tag">Snowflake</div>
+            </div>
+            <div class="card">
+                <h4>DevOps & Tools</h4>
+                <div class="tag">AWS</div><div class="tag">Azure</div><div class="tag">GCP</div><div class="tag">Docker</div><div class="tag">GitHub Actions</div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="container" style="text-align: center; border-top: 1px solid var(--border);">
-        <h2 class="section-header">05 // Terminal Session</h2>
+    <section id="achievements" class="container">
+        <h2 class="section-header">05 // Education & Credentials</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Education</h3>
+                <p><strong>Northeastern University</strong><br>MS, Data Architecture & Mgmt<br>GPA: 3.4 | 2025</p>
+                <hr style="border:0; border-top:1px solid var(--border); margin:15px 0;">
+                <p><strong>Bachelor of Engineering</strong><br>Information Technology<br>GPA: 3.5 | Completed</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Certs</h3>
+                <span class="tag">Azure Data Engineer (DP-203)</span><br>
+                <span class="tag">Azure AI Engineer (AI-102)</span><br>
+                <span class="tag">AWS Developer Associate</span><br>
+                <span class="tag">AWS Cloud Practitioner</span>
+            </div>
+            <div class="card">
+                <h3>Specialized Learning</h3>
+                <span class="tag">ML Specialization (Andrew Ng)</span><br>
+                <span class="tag">Data Science Bootcamp (Udemy)</span><br>
+                <span class="tag">Neural Networks & Deep Learning</span>
+            </div>
+        </div>
+        
+        <h2 class="section-header" style="margin-top:50px;">06 // Achievements</h2>
+        <div class="grid-3">
+            <div class="card">
+                <i class="fas fa-trophy" style="color:var(--accent); font-size:1.5rem;"></i>
+                <h4 style="margin-top:10px;">Hackathon Runner-Up</h4>
+                <p style="font-size:0.85rem; opacity:0.8;">BITS Institute - Technical Excellence Award.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-users" style="color:var(--accent); font-size:1.5rem;"></i>
+                <h4 style="margin-top:10px;">Lead - Coding Club</h4>
+                <p style="font-size:0.85rem; opacity:0.8;">Organized workshops and mentored 100+ students.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bullseye" style="color:var(--accent); font-size:1.5rem;"></i>
+                <h4 style="margin-top:10px;">Lead - OTS Team</h4>
+                <p style="font-size:0.85rem; opacity:0.8;">Managed logistics for National Tech Fest.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="container" style="text-align:center; border-top:1px solid var(--border);">
         <p>patel.dhrumil1@northeastern.edu | (215) 970-1289</p>
-        <div style="margin-top: 20px;">
+        <div style="margin-top:20px;">
             <a href="https://linkedin.com/in/dhrumil" target="_blank" class="btn">LinkedIn</a>
             <a href="https://github.com/dhrumil10" target="_blank" class="btn">GitHub</a>
         </div>
@@ -229,29 +229,20 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
-
-        // Background Particles
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
         function init() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            for(let i=0; i<100; i++){
-                particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, s:Math.random()*2, v:Math.random()*0.5});
-            }
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            for(let i=0; i<80; i++) particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, s:Math.random()*2, v:Math.random()*0.3});
         }
         function animate() {
             ctx.clearRect(0,0,canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(0, 242, 255, 0.2)';
-            particles.forEach(p => {
-                p.y += p.v; if(p.y > canvas.height) p.y = 0;
-                ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, Math.PI*2); ctx.fill();
-            });
+            ctx.fillStyle = 'rgba(0, 242, 255, 0.15)';
+            particles.forEach(p => { p.y += p.v; if(p.y > canvas.height) p.y = 0; ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, Math.PI*2); ctx.fill(); });
             requestAnimationFrame(animate);
         }
-        window.addEventListener('resize', init);
-        init(); animate();
+        window.addEventListener('resize', init); init(); animate();
     </script>
 </body>
 </html>
