@@ -43,9 +43,9 @@
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; letter-spacing: -2px; margin-bottom: 10px; }
         
-        .card { background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 15px; margin-bottom: 30px; transition: 0.3s; height: 100%; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 15px; margin-bottom: 30px; transition: 0.3s; height: 100%; display: flex; flex-direction: column; }
         .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .card h3 { color: var(--accent); margin-bottom: 15px; }
+        .card h3 { color: var(--accent); margin-bottom: 10px; }
 
         .tag { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border: 1px solid var(--border); border-radius: 4px; margin: 3px; color: var(--accent); }
         
@@ -60,11 +60,14 @@
         .btn { display: inline-block; padding: 12px 25px; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s; margin-top: 20px; }
         .btn:hover { background: var(--accent); color: #000; box-shadow: 0 0 15px var(--accent); }
 
+        .project-link { color: var(--accent); text-decoration: none; font-size: 0.85rem; margin-top: auto; padding-top: 15px; display: flex; align-items: center; gap: 5px; }
+        .project-link:hover { text-decoration: underline; }
+
         ul { list-style: none; }
         li { position: relative; padding-left: 20px; margin-bottom: 10px; }
         li::before { content: '>'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
         
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
     </style>
 </head>
 <body>
@@ -138,21 +141,88 @@
     <section id="projects" class="container">
         <h2 class="section-header">03 // The Filesystem</h2>
         <div class="grid-3">
+            
             <div class="card" data-aos="fade-up" style="border-left: 4px solid var(--chaos-red);">
                 <h3 style="color: var(--chaos-red);">ChaosGuard AI</h3>
-                <p>Self-healing CI/CD multi-agent system. Uses a Triad Pattern to rollback regressions and auto-generate PR fixes.</p>
-                <div style="margin-top:10px;"><span class="tag">LangGraph</span><span class="tag">Docker</span><span class="tag">Prometheus</span></div>
+                <p>Self-healing CI/CD multi-agent system. Uses a Triad Pattern (Detective, Patcher, Auditor) to rollback regressions and auto-generate PR fixes.</p>
+                <div style="margin-top:10px;">
+                    <span class="tag">LangGraph</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">Prometheus</span>
+                </div>
+                <a href="https://github.com/dhrumil10/chaos-guard-ai" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
             </div>
+
+            <div class="card" data-aos="fade-up" style="border-left: 4px solid #a066ff;">
+                <h3 style="color: #a066ff;">BioReport AI</h3>
+                <p>Agentic system generating biomedical reports by integrating real-time SEER and PubMed data via LLM and MCP server.</p>
+                <div style="margin-top:10px;">
+                    <span class="tag">Agentic AI</span><span class="tag">Python</span><span class="tag">MCP Server</span><span class="tag">Snowflake</span>
+                </div>
+                <span class="project-link"><i class="fas fa-lock"></i> Private Agent</span>
+            </div>
+
             <div class="card" data-aos="fade-up">
                 <h3>NVIDIA Research Assistant</h3>
-                <p>RAG-based platform for multi-agent financial research and real-time visualization.</p>
-                <div style="margin-top:10px;"><span class="tag">Snowflake</span><span class="tag">Pinecone</span><span class="tag">FastAPI</span></div>
+                <p>Analyzing NVIDIA's reports using RAG, multi-agent architecture, and real-time visualizations.</p>
+                <div style="margin-top:10px;">
+                    <span class="tag">AWS S3</span><span class="tag">Snowflake</span><span class="tag">Pinecone</span><span class="tag">OpenAI</span>
+                </div>
+                <a href="https://github.com/DAMG7250-Team1/nvidia-research-assistant" target="_blank" class="project-link"><i class="fab fa-github"></i> View Project</a>
             </div>
-            <div class="card" data-aos="fade-up" style="border-left: 4px solid #a066ff;">
-                <h3>BioReport AI</h3>
-                <p>Agentic system generating biomedical reports by integrating SEER and PubMed data.</p>
-                <div style="margin-top:10px;"><span class="tag">Agentic AI</span><span class="tag">Python</span><span class="tag">MCP Server</span></div>
+
+            <div class="card" data-aos="fade-up">
+                <h3>AutoRoute AI</h3>
+                <p>Smart route optimization system featuring energy-efficient routing and incident alerts, reducing travel time by up to 20%.</p>
+                <div style="margin-top:10px;">
+                    <span class="tag">LangGraph</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">OpenAI API</span>
+                </div>
+                <a href="#" class="project-link"><i class="fas fa-link"></i> View Project</a>
             </div>
+
+            <div class="card" data-aos="fade-up">
+                <h3>Skill Match AI</h3>
+                <p>AI job matching platform with Pinecone vector DB and OpenAI embeddings, featuring automated CV feedback.</p>
+                <div style="margin-top:10px;">
+                    <span class="tag">Pinecone</span><span class="tag">OpenAI</span><span class="tag">Airflow</span><span class="tag">GCP</span>
+                </div>
+                <a href="#" class="project-link"><i class="fas fa-link"></i> View Project</a>
+            </div>
+
+            <div class="card" data-aos="fade-up">
+                <h3>FRED Stock Market Analytics</h3>
+                <p>Pipeline ingesting FRED data to AWS S3, Snowpark and EC2 with Tonic for secure synthesis.</p>
+                <div style="margin-top:10px;">
+                    <span class="tag">AWS S3</span><span class="tag">Snowpark</span><span class="tag">EC2</span><span class="tag">Tonic</span>
+                </div>
+                <a href="https://github.com/DAMG7250-Team1/Assignment3_part2" target="_blank" class="project-link"><i class="fab fa-github"></i> View Project</a>
+            </div>
+
+            <div class="card" data-aos="fade-up">
+                <h3>Crash Data BI Solution</h3>
+                <p>Scaling big data systems for real-time analysis of 10M+ crash records across NYC, Chicago, and Dallas.</p>
+                <div style="margin-top:10px;">
+                    <span class="tag">Azure ADF</span><span class="tag">Power BI</span><span class="tag">Snowflake</span><span class="tag">ETL</span>
+                </div>
+                <a href="https://github.com/vijeth-sr/damg7370_final_project" target="_blank" class="project-link"><i class="fab fa-github"></i> View Project</a>
+            </div>
+
+            <div class="card" data-aos="fade-up">
+                <h3>SEC Financial Data Analytics</h3>
+                <p>End-to-end data pipeline utilizing Airflow, GCP, and Snowflake to analyze SEC financial data with web scraping.</p>
+                <div style="margin-top:10px;">
+                    <span class="tag">Airflow</span><span class="tag">GCP</span><span class="tag">Snowflake</span><span class="tag">Web Scraping</span>
+                </div>
+                <a href="https://github.com/DAMG7250-Team1/assignment2-secdata" target="_blank" class="project-link"><i class="fab fa-github"></i> View Project</a>
+            </div>
+
+            <div class="card" data-aos="fade-up">
+                <h3>SentinelGate</h3>
+                <p>Advanced security layer and real-time monitoring system for distributed infrastructure and threat detection.</p>
+                <div style="margin-top:10px;">
+                    <span class="tag">Security</span><span class="tag">Monitoring</span><span class="tag">Backend</span>
+                </div>
+                <span class="project-link"><i class="fas fa-shield-alt"></i> Internal System</span>
+            </div>
+
         </div>
     </section>
 
@@ -165,11 +235,11 @@
             </div>
             <div class="card">
                 <h4>AI & Data</h4>
-                <div class="tag">PyTorch</div><div class="tag">LangChain</div><div class="tag">OpenAI API</div><div class="tag">Airflow</div><div class="tag">Snowflake</div>
+                <div class="tag">PyTorch</div><div class="tag">TensorFlow</div><div class="tag">LangChain</div><div class="tag">OpenAI API</div><div class="tag">Airflow</div><div class="tag">Snowflake</div>
             </div>
             <div class="card">
                 <h4>DevOps & Tools</h4>
-                <div class="tag">AWS</div><div class="tag">Azure</div><div class="tag">GCP</div><div class="tag">Docker</div><div class="tag">GitHub Actions</div>
+                <div class="tag">AWS</div><div class="tag">Azure</div><div class="tag">GCP</div><div class="tag">Docker</div><div class="tag">GitHub Actions</div><div class="tag">Jira</div>
             </div>
         </div>
     </section>
